@@ -125,9 +125,10 @@
     .matchstick-item:active { cursor: grabbing; }
     .matchstick-item img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
 
+    /* ขยับปุ่มหัวใจลงด้านล่าง */
     .bouncing-heart-trigger {
       position: absolute;
-      bottom: 80px;
+      bottom: 25px;
       left: 42%;
       transform: translateX(-50%);
       font-size: 75px;
@@ -140,7 +141,7 @@
       outline: none !important;
       box-shadow: none !important;
       -webkit-tap-highlight-color: transparent;
-      filter: drop-shadow(0 4px 12px rgba(30, 144, 255, 0.6));
+      filter: drop-shadow(0 4px 12px rgba(255, 105, 180, 0.6));
     }
 
     @keyframes heartBounce {
@@ -173,11 +174,11 @@
     .big-heart-shape {
       width: 100%;
       height: 100%;
-      background-color: #e3f2fd;
+      background-color: #fff0f5;
       clip-path: path('M115,190 C115,190 20,125 20,65 C20,32 42,15 72,15 C91,15 105,25 115,38 C125,25 139,15 158,15 C188,15 210,32 210,65 C210,125 115,190 115,190 Z');
       position: relative;
-      border: 3px solid #29b6f6;
-      box-shadow: 0 10px 25px rgba(41, 182, 246, 0.4);
+      border: 3px solid #ff69b4;
+      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
     }
 
     .heart-water-fill {
@@ -186,13 +187,13 @@
       left: 0;
       width: 100%;
       height: 0%;
-      background: linear-gradient(0deg, #0288d1, #29b6f6, #81d4fa);
+      background: linear-gradient(0deg, #ff1493, #ff69b4, #ffb6c1);
       transition: height 0.12s ease-out;
-      box-shadow: 0 -4px 12px rgba(41, 182, 246, 0.6);
+      box-shadow: 0 -4px 12px rgba(255, 105, 180, 0.6);
     }
 
     .fill-instruction {
-      color: #0277bd;
+      color: #db7093;
       font-size: 15px;
       margin-top: 25px;
       font-weight: 500;
@@ -421,7 +422,8 @@
       <img id="matchImg" src="ไม้ขีด.png" alt="ไม้ขีด">
     </div>
 
-    <div class="bouncing-heart-trigger" id="heartTrigger">💙</div>
+    <!-- เปลี่ยนอีโมจิหัวใจเป็นสีชมพู -->
+    <div class="bouncing-heart-trigger" id="heartTrigger">🩷</div>
 
     <div class="big-heart-modal" id="heartModal">
       <div class="big-heart-container" id="bigHeartContainer">
@@ -776,7 +778,6 @@
     }, { passive: false });
     window.addEventListener('touchend', stopWatering);
 
-    /* ธีมกระต่าย จิ้งจอก และหัวใจสีฟ้าพาสเทล */
     const cuteElements = ['💙', '🐰', '🦊', '✨', '🩵', '🐾'];
 
     function createFloatingElements(count = 1, customX = null, customY = null) {
@@ -807,12 +808,12 @@
       }, 120);
     }
 
-    /* ปรับตำแหน่งพิกัดรูปภาพทั้ง 5 รูปใหม่ให้อยู่ตรงกลางสมดุล ไม่กองไปทางซ้าย */
+    /* ตำแหน่งพิกัดรูปภาพทั้ง 5 รูปแบบเดิม และเปลี่ยน photo3.png เป็น photo3.jpg */
     const polaroidData = [
       { img: 'photo1.jpg', top: '12%', left: '18%', rotate: '-7deg', duration: '1.8s', delay: '0s' },
       { img: 'photo2.jpg', top: '12%', left: '56%', rotate: '6deg', duration: '2.4s', delay: '0.4s' },
       { img: 'photo5.jpg', top: '38%', left: '37%', rotate: '-2deg', duration: '1.6s', delay: '0.2s' },
-      { img: 'photo3.png', top: '60%', left: '16%', rotate: '5deg', duration: '2.2s', delay: '0.6s' },
+      { img: 'photo3.jpg', top: '60%', left: '16%', rotate: '5deg', duration: '2.2s', delay: '0.6s' },
       { img: 'photo4.jpg', top: '60%', left: '58%', rotate: '-5deg', duration: '2.0s', delay: '0.3s' }
     ];
 
